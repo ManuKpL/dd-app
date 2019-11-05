@@ -1,5 +1,6 @@
 import { User } from '../User';
+import { UserService } from '../data-access';
 
-const users = [{ username: 'bobby', password: 'martin' }];
-
-export const listUsers = async () => users.map(User.NEW);
+export const makeListUsers = (userService: UserService) => {
+  return async () => userService.all().map(User.NEW);
+};
