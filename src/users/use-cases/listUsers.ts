@@ -1,5 +1,5 @@
 import { User } from '../User';
 
-const users = [new User('bobby', 'martin')];
+const users = [{ username: 'bobby', password: 'martin' }];
 
-export const listUsers = async () => users;
+export const listUsers = async () => users.map(User.NEW);
